@@ -7,7 +7,7 @@ Example Usage:
 --------------
 
     def test_tickettool(build_trac_env):
-        env = build_trac_env[0]
+        env = build_trac_env
         assert 26 == env.get_version()
 
 Buildout Usage:
