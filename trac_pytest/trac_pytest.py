@@ -46,17 +46,8 @@ def build_trac_env(request):
     ta.do_initenv(u'NameOfTracEnv sqlite:db/trac.db')
     env = Environment(path)
 
-    # Env-Dict for fcgi
-    env_dict = {}
-    env_dict['trac.base_url'] = 'http://127.0.0.1:8000/trac/'
-
-    # Create the Request
-    req = Request(env_dict, None)
-    req.authname ='foo'
-    req.perm = 'TICKET_ADMIN'
-    req.tz = 42
-
     def fin():
         rmtree(path)
     request.addfinalizer(fin)
-    return env, req
+
+    return env
