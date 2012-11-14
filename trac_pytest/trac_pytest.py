@@ -28,9 +28,6 @@ import pytest
 import os
 from trac.admin.console import TracAdmin
 from trac.env import Environment
-from trac.web import Request
-from trac.ticket.query import Query
-from teamchilllib.ticket import TicketTool
 from shutil import rmtree
 
 @pytest.fixture
