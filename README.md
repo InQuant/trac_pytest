@@ -1,7 +1,7 @@
 py.test-Fixture for Trac
 ========================
 
-    Create a temporary Trac-Environment
+Create a temporary Trac-Environment
 
 Example Usage:
 --------------
