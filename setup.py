@@ -3,7 +3,7 @@ import os
 
 PACKAGE = 'trac_pytest'
 version = '0.1'
-long_description = open("README").read()
+long_description = open("README.md").read()
 classifiers = [
 "Programming Language :: Python",
   ("Topic :: Software Development :: "
