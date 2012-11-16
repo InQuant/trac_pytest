@@ -9,6 +9,10 @@ Quick Start:
 ------------
 
     # Assumes you have Trac and pytest installed
+    # This calls the test in ./tests/trac_test.py
+    #
+    # Creates a sample Ticket and checks if
+    # Ticket-Count == 1
 
     git clone https://github.com/InQuant/trac_pytest.git
     cd trac_pytest
