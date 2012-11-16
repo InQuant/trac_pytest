@@ -2,7 +2,7 @@
 #
 #  File Name: ticket_test.py
 #  Creation Date: 2012 Nov 06
-#  Last Modified: 2012 Nov 14
+#  Last Modified: 2012 Nov 16
 
 #  Copyright (c) 2003-2012 InQuant GmbH
 #
@@ -25,22 +25,19 @@ __author__ = 'Rainer Hihn <rainer.hihn@inquant.de>'
 __docformat__ = 'plaintext'
 
 import pytest
-import os
+import tempfile
 from trac.admin.console import TracAdmin
 from trac.env import Environment
 from shutil import rmtree
 
 @pytest.fixture
 def build_trac_env(request):
-    # Create the Test-Environment
-    path = '/tmp/foo'
-
-    if os.path.exists(path):
-        rmtree(path)
-
+    """Create a Trac Environment in a tmp dir
+    """
+    path = tempfile.mkdtemp()
     ta = TracAdmin()
     ta.env_set(path)
-    ta.do_initenv(u'NameOfTracEnv sqlite:db/trac.db')
+    ta.do_initenv(u'ExampleTracEnv sqlite:db/trac.db')
     env = Environment(path)
 
     def fin():
