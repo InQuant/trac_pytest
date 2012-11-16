@@ -40,6 +40,6 @@ Use this Fixture with Buildout:
       trac
     arguments = '${buildout:directory}/src/' + sys.argv[1]
 
-Then call pytest with an module as parameter:
+Then call pytest with a module as parameter:
 
     ./bin/py.test testmodule
