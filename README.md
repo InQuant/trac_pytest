@@ -1,7 +1,19 @@
 py.test-Fixture for Trac
 ========================
 
-Create a temporary Trac-Environment
+[pytest](http://pytest.org/latest/ "pytest") is a mature full-featured Python testing tool.
+
+This package creates a temporary Trac-Environment with a fully functional database.
+
+Quick Start:
+------------
+
+    # Assumes you have Trac and pytest installed
+
+    git clone https://github.com/InQuant/trac_pytest.git
+    cd trac_pytest
+    py.test
+
 
 Example Usage:
 --------------
@@ -10,8 +22,8 @@ Example Usage:
         env = build_trac_env
         assert 26 == env.get_version()
 
-Buildout Usage:
----------------
+Use this Fixture with Buildout:
+-------------------------------
 
     [buildout]
     parts =
