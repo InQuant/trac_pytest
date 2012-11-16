@@ -25,6 +25,8 @@ Example Usage:
 Use this Fixture with Buildout:
 -------------------------------
 
+    # File buildout.cfg
+
     [buildout]
     parts =
             pytest
@@ -36,5 +38,8 @@ Use this Fixture with Buildout:
     eggs =
       pytest
       trac
-      teamchilllib
     arguments = '${buildout:directory}/src/' + sys.argv[1]
+
+Then call pytest with an module as parameter:
+
+    ./bin/py.test testmodule
