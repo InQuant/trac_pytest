@@ -29,17 +29,19 @@ __docformat__ = 'plaintext'
 from trac_pytest import build_trac_env
 from trac.web import Request
 from trac.ticket.query import Query
-from trac.ticket.api import TicketSystem
 import trac.ticket.model as model
 
 def test_trac(build_trac_env):
+    """Create a sample Ticket and check if
+    the Ticket-Count == 1
+    """
     env = build_trac_env
     env_dict = {}
     env_dict['trac.base_url'] = 'http://127.0.0.1:8000/trac/'
 
     # Create the Request
     req = Request(env_dict, None)
-    req.authname ='JohnDoe'
+    req.authname = 'JohnDoe'
     req.perm = 'TICKET_ADMIN'
     req.tz = 42
     req.locale = 42
