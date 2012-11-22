@@ -2,7 +2,7 @@
 #
 #  File Name: ticket_test.py
 #  Creation Date: 2012 Nov 06
-#  Last Modified: 2012 Nov 16
+#  Last Modified: 2012 Nov 21
 
 #  Copyright (c) 2003-2012 InQuant GmbH
 #
@@ -44,4 +44,6 @@ def build_trac_env(request):
         rmtree(path)
     request.addfinalizer(fin)
 
+    if request.cls:
+        request.cls.env = env
     return env

@@ -22,9 +22,31 @@ Quick Start:
 Example Usage:
 --------------
 
+::
+
+    from trac_pytest import build_trac_env
+
     def test_tickettool(build_trac_env):
         env = build_trac_env
         assert 26 == env.get_version()
+
+Usage with a unittest.TestCase:
+-------------------------------
+
+::
+
+    import unittest
+    import pytest
+    from trac_pytest import build_trac_env
+
+    @pytest.mark.usefixtures("build_trac_env")
+    class TestCaseSomething(unittest.TestCase):
+
+        def testSomething(self):
+            #the build_trac_env fixture created an env and set it on the class
+            assert self.env
+
+
 
 Use this Fixture with Buildout:
 -------------------------------
@@ -33,17 +55,19 @@ Use this Fixture with Buildout:
 
     [buildout]
     parts =
-            pytest
+            test
 
     ( ... )
 
-    [pytest]
+    [test]
     recipe = zc.recipe.egg
     eggs =
       pytest
       trac
+      testmodule
+    scripts = py.test=test
     arguments = '${buildout:directory}/src/' + sys.argv[1]
 
 Then call pytest with a module as parameter:
 
-    ./bin/py.test testmodule
+    ./bin/test testmodule
