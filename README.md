@@ -24,8 +24,6 @@ Example Usage:
 
 ::
 
-    from trac_pytest import build_trac_env
-
     def test_tickettool(build_trac_env):
         env = build_trac_env
         assert 26 == env.get_version()
@@ -37,7 +35,6 @@ Usage with a unittest.TestCase:
 
     import unittest
     import pytest
-    from trac_pytest import build_trac_env
 
     @pytest.mark.usefixtures("build_trac_env")
     class TestCaseSomething(unittest.TestCase):

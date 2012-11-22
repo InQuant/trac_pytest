@@ -2,7 +2,7 @@
 #
 #  File Name: trac_pytest_example.py
 #  Creation Date: 2012 Nov 16
-#  Last Modified: 2012 Nov 16
+#  Last Modified: 2012 Nov 22
 
 #  Copyright (c) 2003-2012 InQuant GmbH
 #
@@ -26,7 +26,6 @@ __docformat__ = 'plaintext'
 
 # vim: set ft=python ts=4 sw=4 expandtab :
 
-from trac_pytest import build_trac_env
 from trac.web import Request
 from trac.ticket.query import Query
 import trac.ticket.model as model
