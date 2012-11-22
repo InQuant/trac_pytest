@@ -22,8 +22,9 @@ setup(name=PACKAGE,
   packages=find_packages(exclude=['ez_setup']),
   include_package_data=True,
   install_requires=[],
-  # test_suite= nose.collector ,
-  # test_requires=[ Nose ],
-  #entry_points=
-  # -*- Entry points: -*-
+  entry_points={
+    'pytest11': [
+        'trac_pytest = trac_pytest',
+    ]
+  },
   )
