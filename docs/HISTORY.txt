@@ -1,0 +1,8 @@
+Changelog
+=========
+
+0.1 (????-??-??)
+----------------
+
+make build_trac_env fixture usable for unittest.TestCase
+[hplocher]
